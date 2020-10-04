@@ -36,9 +36,24 @@ class ShowCase extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const SpinKitWave(color: Colors.white, type: SpinKitWaveType.start),
-                const SpinKitWave(color: Colors.white, type: SpinKitWaveType.center),
-                const SpinKitWave(color: Colors.white, type: SpinKitWaveType.end),
+                const SpinKitWave(
+                    color: Colors.white, type: SpinKitWaveType.start),
+                const SpinKitWave(
+                    color: Colors.white, type: SpinKitWaveType.center),
+                const SpinKitWave(
+                    color: Colors.white, type: SpinKitWaveType.end),
+              ],
+            ),
+            const SizedBox(height: 48.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const SpinKitPianoWave(
+                    color: Colors.white, type: SpinKitPianoWaveType.start),
+                const SpinKitPianoWave(
+                    color: Colors.white, type: SpinKitPianoWaveType.center),
+                const SpinKitPianoWave(
+                    color: Colors.white, type: SpinKitPianoWaveType.end),
               ],
             ),
             const SizedBox(height: 48.0),
@@ -47,7 +62,8 @@ class ShowCase extends StatelessWidget {
               children: [
                 const SpinKitThreeBounce(color: Colors.white),
                 const SpinKitWanderingCubes(color: Colors.white),
-                const SpinKitWanderingCubes(color: Colors.white, shape: BoxShape.circle),
+                const SpinKitWanderingCubes(
+                    color: Colors.white, shape: BoxShape.circle),
               ],
             ),
             const SizedBox(height: 48.0),
@@ -56,7 +72,8 @@ class ShowCase extends StatelessWidget {
               children: [
                 const SpinKitCircle(color: Colors.white),
                 const SpinKitFadingFour(color: Colors.white),
-                const SpinKitFadingFour(color: Colors.white, shape: BoxShape.rectangle),
+                const SpinKitFadingFour(
+                    color: Colors.white, shape: BoxShape.rectangle),
               ],
             ),
             const SizedBox(height: 48.0),
@@ -82,7 +99,8 @@ class ShowCase extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const SpinKitFadingGrid(color: Colors.white),
-                const SpinKitFadingGrid(color: Colors.white, shape: BoxShape.rectangle),
+                const SpinKitFadingGrid(
+                    color: Colors.white, shape: BoxShape.rectangle),
                 const SpinKitSquareCircle(color: Colors.white),
               ],
             ),
@@ -91,7 +109,8 @@ class ShowCase extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const SpinKitSpinningCircle(color: Colors.white),
-                const SpinKitSpinningCircle(color: Colors.white, shape: BoxShape.rectangle),
+                const SpinKitSpinningCircle(
+                    color: Colors.white, shape: BoxShape.rectangle),
                 const SpinKitFadingCircle(color: Colors.white),
               ],
             ),
@@ -101,6 +120,7 @@ class ShowCase extends StatelessWidget {
               children: [
                 const SpinKitHourGlass(color: Colors.white),
                 const SpinKitPouringHourglass(color: Colors.white),
+                const SpinKitDancingSquare(color: Colors.white),
               ],
             ),
             const SizedBox(height: 64.0),

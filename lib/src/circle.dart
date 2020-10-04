@@ -9,7 +9,9 @@ class SpinKitCircle extends StatefulWidget {
     this.itemBuilder,
     this.duration = const Duration(milliseconds: 1200),
     this.controller,
-  })  : assert(!(itemBuilder is IndexedWidgetBuilder && color is Color) && !(itemBuilder == null && color == null),
+  })  : assert(
+            !(itemBuilder is IndexedWidgetBuilder && color is Color) &&
+                !(itemBuilder == null && color == null),
             'You should specify either a itemBuilder or a color'),
         assert(size != null),
         super(key: key);
@@ -24,15 +26,31 @@ class SpinKitCircle extends StatefulWidget {
   _SpinKitCircleState createState() => _SpinKitCircleState();
 }
 
-class _SpinKitCircleState extends State<SpinKitCircle> with SingleTickerProviderStateMixin {
-  final List<double> delays = [.0, -1.1, -1.0, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1];
+class _SpinKitCircleState extends State<SpinKitCircle>
+    with SingleTickerProviderStateMixin {
+  final List<double> delays = [
+    .0,
+    -1.1,
+    -1.0,
+    -0.9,
+    -0.8,
+    -0.7,
+    -0.6,
+    -0.5,
+    -0.4,
+    -0.3,
+    -0.2,
+    -0.1
+  ];
   AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
 
-    _controller = (widget.controller ?? AnimationController(vsync: this, duration: widget.duration))..repeat();
+    _controller = (widget.controller ??
+        AnimationController(vsync: this, duration: widget.duration))
+      ..repeat();
   }
 
   @override
@@ -57,8 +75,12 @@ class _SpinKitCircleState extends State<SpinKitCircle> with SingleTickerProvider
                 child: Align(
                   alignment: Alignment.center,
                   child: ScaleTransition(
-                    scale: DelayTween(begin: 0.0, end: 1.0, delay: delays[index]).animate(_controller),
-                    child: SizedBox.fromSize(size: Size.square(widget.size * 0.15), child: _itemBuilder(index)),
+                    scale:
+                        DelayTween(begin: 0.0, end: 1.0, delay: delays[index])
+                            .animate(_controller),
+                    child: SizedBox.fromSize(
+                        size: Size.square(widget.size * 0.15),
+                        child: _itemBuilder(index)),
                   ),
                 ),
               ),
@@ -71,5 +93,7 @@ class _SpinKitCircleState extends State<SpinKitCircle> with SingleTickerProvider
 
   Widget _itemBuilder(int index) => widget.itemBuilder != null
       ? widget.itemBuilder(context, index)
-      : DecoratedBox(decoration: BoxDecoration(color: widget.color, shape: BoxShape.circle));
+      : DecoratedBox(
+          decoration:
+              BoxDecoration(color: widget.color, shape: BoxShape.circle));
 }
